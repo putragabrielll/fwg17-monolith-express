@@ -26,6 +26,6 @@ exports.deleteUser = async (req, res)=>{
 }
 
 exports.createUser = async (req, res) => {
-    console.log(req.body)
-    return res.render('users')
+    const users = await userModel.createUser(req.body)
+    return res.redirect("/users")
 }
