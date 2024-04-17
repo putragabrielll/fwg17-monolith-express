@@ -13,7 +13,6 @@ exports.detailUser = async (req, res)=>{
 
 exports.editUser = async (req, res)=>{
     await userModel.updateUser(req.params.id, req.body)
-    console.log(req.body)
     return res.redirect("/users")
 }
 
@@ -24,4 +23,9 @@ exports.deleteUser = async (req, res)=>{
         message: "Delete success",
         results: deleted
     })
+}
+
+exports.createUser = async (req, res) => {
+    console.log(req.body)
+    return res.render('users')
 }
